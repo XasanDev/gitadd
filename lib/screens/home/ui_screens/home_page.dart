@@ -58,11 +58,11 @@ class HomePage extends StatelessWidget {
                 HomePageSliverGrid.sliverGrid()
               ],
             ),
-            Positioned(
-              bottom: SizeConfig.getHeight(40),
-              left: SizeConfig.getWidth(40),
-              child: BottomNavBar.bottomAppBar(),
-            ),
+            // Positioned(
+            //   bottom: SizeConfig.getHeight(40),
+            //   left: SizeConfig.getWidth(40),
+            //   child: BottomNavBar.bottomAppBar(),
+            // ),
           ],
         ),
       ),
