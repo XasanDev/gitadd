@@ -1,12 +1,150 @@
 import 'package:flutter/material.dart';
+import 'package:imtixon/core/utils/sizeof/size_config.dart';
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({ Key? key }) : super(key: key);
+class NewsDetailPage extends StatelessWidget {
+  const NewsDetailPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+   SizeConfig().init(context);
     return Scaffold(
-      
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/darsimtihon.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Stack(
+          children: [
+            Positioned(
+              top: SizeConfig.getHeight(52),
+              left: SizeConfig.getWidth(15),
+              child: InkWell(
+                child: Container(
+                  height: SizeConfig.getHeight(32),
+                  width: SizeConfig.getWidth(32),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(
+                      SizeConfig.getHeight(8),
+                    ),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.arrow_back_ios,
+                      size: SizeConfig.getHeight(18),
+                    ),
+                  ),
+                
+                ),
+                onTap: (){
+                  Navigator.pushNamed(context, "/");
+                },
+              ),
+            ),
+            Positioned(
+              top: SizeConfig.getHeight(404),
+              child: Container(
+                height: SizeConfig.getHeight(438),
+                width: SizeConfig.getWidth(375),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(
+                      SizeConfig.getHeight(16),
+                    ),
+                    topRight: Radius.circular(
+                      SizeConfig.getHeight(16),
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: SizeConfig.getHeight(40),
+                    left: SizeConfig.getWidth(10),
+                    right: SizeConfig.getWidth(10),
+                    bottom: SizeConfig.getHeight(10),
+                  ),
+                  child: Text(
+                    "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+                    style: TextStyle(
+                      fontSize: SizeConfig.getHeight(14),
+                      color: const Color(0xff2E0505),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              height: SizeConfig.getHeight(1464),
+              left: SizeConfig.getWidth(284),
+              child: Container(
+                height: SizeConfig.getHeight(56),
+                width: SizeConfig.getWidth(56),
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      "assets/images/FAB.png",
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: SizeConfig.getHeight(294),
+              left: SizeConfig.getWidth(32),
+              child: Container(
+                height: SizeConfig.getHeight(141),
+                width: SizeConfig.getWidth(311),
+                decoration: BoxDecoration(
+                  color: Colors.grey.withOpacity(0.8),
+                  borderRadius: BorderRadius.circular(SizeConfig.getHeight(16)),
+                ),
+                child: Padding(
+                  padding:
+                      EdgeInsets.only(top: SizeConfig.getHeight(16),
+                       left: SizeConfig.getWidth(16)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Sunday, 9 May 2021",
+                        style: TextStyle(
+                          fontSize: SizeConfig.getHeight(12),
+                          color: const Color(0xff2E0505),
+                        ),
+                      ),
+                      SizedBox(height: SizeConfig.getHeight(8)),
+                      SizedBox(
+                        height: SizeConfig.getHeight(58),
+                        width: SizeConfig.getWidth(263),
+                        child: Text(
+                          "Crypto investors should be prepared to lose all their money, BOE governor says",
+                          style: TextStyle(
+                            fontSize: SizeConfig.getHeight(16),
+                            fontWeight: FontWeight.w700,
+                            color: const Color(0xff2E0505),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: SizeConfig.getHeight(12)),
+                      Text(
+                        "Published by Ryan Browne",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w800,
+                          fontSize: SizeConfig.getHeight(10),
+                          color: const Color(0xff2E0505),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
